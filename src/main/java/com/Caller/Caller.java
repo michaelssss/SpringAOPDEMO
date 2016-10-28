@@ -7,7 +7,7 @@
  */
 package com.Caller;
 
-import com.michaelssss.funcs;
+import com.Funcs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,17 +25,17 @@ import java.lang.reflect.Method;
 public class Caller
 {
     @Autowired
-    private funcs funcs;
+    private Funcs funcs;
 
     public void call()
         throws Exception
     {
-        Method[] methods = funcs.getClass().getDeclaredMethods();
-        for (Method method : methods)
-        {
-            method.setAccessible(true);
-            method.invoke(method);
-        }
+
+        Method method = funcs.getClass().getMethod("C");
+        method.invoke(funcs);
+        Method B = funcs.getClass().getMethod("B");
+        B.setAccessible(true);
+        B.invoke(funcs);
     }
 
 }

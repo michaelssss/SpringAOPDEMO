@@ -1,6 +1,10 @@
 package com.michaelssss;
 
-public class funcs
+import com.Funcs;
+import org.springframework.stereotype.Component;
+
+@Component
+public class FuncsImpl implements Funcs
 {
     private void A()
     {
